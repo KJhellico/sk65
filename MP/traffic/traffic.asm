@@ -100,7 +100,7 @@ _endw1:
         ldrb    r1, [r7,#PIC_Y]
         ldrb    r2, [r7,#PIC_X]
         sub     r2, #1
-        CallLib DrawFrame
+        CallBigLib DrawRoundedFrame
         add     sp, #20
         pop     {r3} ; x
         sub     r3, #1
@@ -161,7 +161,7 @@ DrawNum:
 Align16
 config  dd      Magic, PatchID, 0, 0
 /*
-{patch=TrafficIndicator id=3102 cp=Sinclair ver=1.3 mem=20}","\
+{patch=TrafficIndicator id=3102 cp=Sinclair ver=1.51 mem=20}","\
 {14 xy Position x=132 y=0}","\
 {2 h FillColor ml=4 v=F8FCF864}","\
 {10 h BorderColor ml=4 v=00000064}"","\
