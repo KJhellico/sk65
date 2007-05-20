@@ -121,7 +121,7 @@ GPRS:
         bl       ShowKB
 ;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 NonPermanentRAM:
-        CallLib  GetNonPermMemAvail
+        CallLib  GetFreeRamAvail
         mov      r1, r0
         mov      r0, #6
         bl       ShowKB

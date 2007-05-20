@@ -39,7 +39,7 @@ EntryIdle:
 _1:
         add     sp, #4
         mov     r0, #1
-        CallLib EndUpdateScreen
+        CallLib TriggerUpdate
         mov     r0, r4
         pop     {r4,r5,r7,pc}
 
@@ -55,13 +55,13 @@ EntrySS:
 _2:
         add     sp, #8
         mov     r0, #1
-        CallLib EndUpdateScreen
+        CallLib TriggerUpdate
         mov     r0, r6
         pop     {r4-r6,pc}
 
 Main:
         push    {r0-r7,lr}
-        GetPoint FreeRam
+        GetPoint FreeRAM
         add     r0, #10h
         mov     r7, r0
         LoadReg 0, config + 4
@@ -313,13 +313,13 @@ timeout:
         AdrReg  2, clear
         add     r2, #1
         ldrb    r1, [r6,#3]
-        CallLib CallAfterTimer
+        CallLib GBS_StartTimerProc
         pop     {r0-r7,pc}
 
 Align4
 clear:
         push    {r0,r1,lr}
-        GetPoint FreeRam
+        GetPoint FreeRAM
         add     r0, #10h
         mov     r1, #0FFh
         strb    r1, [r0]
