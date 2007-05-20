@@ -88,7 +88,7 @@ MsgBoxYesNo                        equ 0x4F    ; __thumb int MsgBoxYesNo(int fla
 MsgBoxOkCancel                     equ 0x50    ; __thumb int MsgBoxOkCancel(int flag, int LgpID, void CallBackProc(int));
 GetNetMode                         equ 0x51    ; GetNetMode
 GetIlluminationDataTable           equ 0x52    ; GetIlluminationDataTable
-memcmp                             equ 0x53    ; memcmp
+memcmp_2                           equ 0x53    ; memcmp
 StrToInt                           equ 0x54    ; StrToInt
 SwitchVibraOnOff                   equ 0x55    ; SwitchVibraOnOff
 PlayVibra                          equ 0x56    ; PlayVibra
@@ -126,7 +126,7 @@ GetTypeOfCall                      equ 0x73    ; GetTypeOfCall
 GetFunctionPointer                 equ 0x74    ; __thumb void *GetFunctionPointer(char * _shortcut);
 IsCanvasBufferSet                  equ 0x75    ; IsCanvasBufferSet(char CanvasID)
 GetCanvasBufferPicPtr              equ 0x76    ; GetCanvasBufferPicPtr
-SetColor                           equ 0x77    ; SetColor
+set2color_byPaletteAdr             equ 0x77    ; set2color_byPaletteAdr
 GetTimeFormat                      equ 0x78    ; GetTimeFormat
 DrawObject2Layer                   equ 0x79    ; DrawObject2Layer(LCD_Layer *, DRWOBJ *);
 UpdateDisplayByLayerPtr            equ 0x7A    ; UpdateDisplayByLayerPtr(LCD_Layer *);
