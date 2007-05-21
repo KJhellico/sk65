@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 12.05.2007
+; 21.05.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -20,7 +20,7 @@
 ;002C: 0x ; 0B: __arm int fread(int FileHandler, void *cBuffer, int iByteCount, unsigned int *ErrorNumber);
 ;0030: 0x ; 0C: __arm unsigned int fwrite(int FileHandler, char * cBuffer, int iByteCount, unsigned int *ErrorNumber);
 0034: 0xA0945974 ; 0D: __arm void fclose(int FileHandler, unsigned int *ErrorNumber);
-0038: 0xA09459A4 ; 0E: fflush
+;0038: 0x ; 0E: 
 003C: 0xA09459D4 ; 0F: __arm unsigned int lseek(int FileHandler, unsigned int offset, unsigned int origin, unsigned int *ErrorNumber, unsigned int *ErrorNumber2);
 
 0040: 0xA0945804 ; 10: __arm int mkdir(const char * cFileName, unsigned int *ErrorNumber);
@@ -48,30 +48,30 @@
 0094: 0xA02A77E3 ; 25: __thumb void DrawCanvas(void *data, int x1, int y1, int x2, int y2, int flag_one);
 0098: 0xA0730375 ; 26: __thumb void DrawImgBW(unsigned int x, unsigned int y, unsigned int picture, char *pen, char *brush);
 009C: 0xA02A7167 ; 27: AddIconToIconbar
-00A0: 0xA0961AD4 ; 28: getEELiteMaxID
-00A4: 0xA0944440 ; 29: getEEFullMaxID
+;00A0: 0x ; 28: 
+;00A4: 0x ; 29: 
 00A8: 0xA0961970 ; 2A: __arm int *GetEELiteBlockAddress(short blocknum);
-00AC: 0xA0961A78 ; 2B: getEELiteBlockSizeVersion
-00B0: 0xA0944084 ; 2C: getEEFullBlockSizeVersion
-00B4: 0xA0961B08 ; 2D: StartWriteEELiteBlock
-00B8: 0xA0961B84 ; 2E: FinishWriteEELiteBlock
-00BC: 0xA0961AE0 ; 2F: DeleteEELiteBlock
+;00AC: 0x ; 2B: 
+;00B0: 0x ; 2C: 
+;00B4: 0x ; 2D: 
+;00B8: 0x ; 2E: 
+;00BC: 0x ; 2F: 
 
-00C0: 0xA0961B40 ; 30: WriteEELiteBlock
+;00C0: 0x ; 30: 
 00C4: 0xA0D1DB0D ; 31: StrChrRev
 00C8: 0xA02F8600 ; 32: __arm void PlaySound(long param1, long param2, long param3, long tone, long param5);
 00CC: 0xA02EE7E4 ; 33: PlaySound2
 00D0: 0xA02B2BAC ; 34: PlaySoundLoop
 00D4: 0xA04F3E6F ; 35: AlarmClockRing
-00D8: 0xA0485AE5 ; 36: GetATCmdString
-00DC: 0xA04F79AF ; 37: OriginalATCGSN
-00E0: 0xA0485481 ; 38: PostAtCommand
-00E4: 0xA0486BBB ; 39: SendATAnswerStr
-00E8: 0xA07F40B5 ; 3A: mfree_high
+;00D8: 0x ; 36: 
+;00DC: 0x ; 37: 
+;00E0: 0x ; 38: 
+;00E4: 0x ; 39: 
+;00E8: 0x ; 3A: 
 00EC: 0xA0D1CFE1 ; 3B: MemChr
 00F0: 0xA0945AA0 ; 3C: __arm int setfilesize(int FileHandler, unsigned int iNewFileSize, unsigned int *ErrorNumber);
 00F4: 0xA04918A1 ; 3D: editOrNewTXTModule
-00F8: 0xA06E6F55 ; 3E: LoadProcesses
+;00F8: 0x ; 3E: 
 00FC: 0xA0731099 ; 3F: SelectColor
 
 0100: 0xA0319097 ; 40: GetVibraStatus
@@ -215,7 +215,7 @@
 ;0308: 0x   ; C2: GetAllPatchesByInject
 030C: 0xA0FCF3A1 ; C3: ProcessFiles
 0310: 0xA0FC0C01 ; C4: GetBuffer
-;0314: 0x   ; C5: PIT_Manager_Core
+;0314: 0x   ; C5: 
 ;0318: 0x   ; C6: __arm char GetAkkuCapacity();
 ;031C: 0x   ; C7: CallLibFunByNumber
 0320: 0xA8E707E4 ; C8: RamCap
