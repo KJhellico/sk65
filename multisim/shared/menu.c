@@ -9,10 +9,10 @@ extern KV_SIM_CTRL_BLOCK * SIM_Data;
 //extern struct MENUSTRUCT test_menu;
 //extern struct ITEMSDATA items[];
 
-#define SIM_number		        (SIM_Data->SIM_number)
-#define Block5400		        (SIM_Data->Block5400)
+#define SIM_number          (SIM_Data->SIM_number)
+#define Block5400           (SIM_Data->Block5400)
 
-#define SPN_DATA_BYTE_LEN       16
+#define SPN_DATA_BYTE_LEN   16
 
 extern "C" void LgpHook(unsigned id, unsigned b, unsigned c); 
 extern "C" void ShowMenu (); 
@@ -28,27 +28,27 @@ static const unsigned long ENTRYS[]={(unsigned long)SelectMenu, (unsigned long)S
 static const unsigned long HeaderIcon[]={PIC_SIM_insert, 0};
 static const unsigned long IconIDList[]={PIC_empty, PIC_checked, PIC_unchecked, PIC_unc, PIC_err, PIC_r_sel, PIC_r_unsel, PIC_bell_on, PIC_bell_off, PIC_bell_beep};
 static const struct ITEMSDATA items[]={
-                                 {IconIDList, LGP_This_SIM, LGP_This_SIM, 0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group1, LGP_Group1,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group2, LGP_Group2,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group3, LGP_Group3,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group4, LGP_Group4,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group5, LGP_Group5,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group6, LGP_Group6,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group7, LGP_Group7,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group8, LGP_Group8,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
-                                 {IconIDList, LGP_Group9, LGP_Group9,     0, ITEMSDATA_Unk2_ADR, 3, 0x59C}};
+  {IconIDList, LGP_This_SIM, LGP_This_SIM,  0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group1, LGP_Group1,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group2, LGP_Group2,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group3, LGP_Group3,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group4, LGP_Group4,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group5, LGP_Group5,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group6, LGP_Group6,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group7, LGP_Group7,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group8, LGP_Group8,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C},
+  {IconIDList, LGP_Group9, LGP_Group9,      0, ITEMSDATA_Unk2_ADR, 3, 0x59C}};
 static const struct MENUFRAME test_MenuHeader={0, 0, 131, 17, (unsigned long *)&HeaderIcon, LGP_SIM, 0x7FFFFFFF};
 static const struct MENUSTRUCT test_menu={0, 0, 0, 0, MENUSTRUCT_pUnkData1_ADR, MENUSTRUCT_pUnkData2_ADR, 0x201, 0, (void *)OnAppearItem, (ITEMSDATA*)&(items), ENTRYS, 10};
 
 void SelectMenu(unsigned long unc)
 {
-   unsigned long curr;
+  unsigned long curr;
 
-   curr=GetMenuCurItem(unc);
+  curr=GetMenuCurItem(unc);
 
-   ChangeSIM(curr);
-   CloseMenu(unc);
+  ChangeSIM(curr);
+  CloseMenu(unc);
 }
 
 /*int OnKeyPressed(void *data, char *key_data) __thumb
@@ -64,15 +64,14 @@ int OnMessage() __thumb
 
 void OnAppearItem(unsigned long unc1, unsigned long ItemNum)
 {
-   int Icon=6;
-   if (ItemNum==SIM_number)
-   {
-      Icon=5;
-   }
+  int Icon=6;
+  if (ItemNum==SIM_number)
+  {
+    Icon=5;
+  }
 
-   SetMenuState(unc1, ItemNum, Icon);
+  SetMenuState(unc1, ItemNum, Icon);
 }
-
 
 void ShowMenu ()
 {

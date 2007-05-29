@@ -25,7 +25,7 @@ typedef void P_MFREE(void *);
 
 /* ----------  ---------- */
 P_SIM_ACCESS        *const SIM_Access = (P_SIM_ACCESS*) SIM_Access_Function_ADR;
-extern "C" P_MEMCPY            *const LIB_Memcpy = (P_MEMCPY*) memcpy_ADR;
+extern "C" P_MEMCPY *const LIB_Memcpy = (P_MEMCPY*) memcpy_ADR;
 P_MEMSET            *const LIB_Memset = (P_MEMSET*) memset_ADR;
 P_SET_LAI           *const Set_LAI    = (P_SET_LAI*) Set_LAI_ADR;
 P_SEARCH            *const Search    = (P_SEARCH*) Net_Search_ADR;
@@ -33,7 +33,7 @@ P_MALLOC            *const malloc     = (P_MALLOC*) malloc_ADR;
 P_SET_SMS_PROFILE   *const Set_SMS_Profile = (P_SET_SMS_PROFILE*) Set_SMS_Profile_ADR;
 P_STARTTIMERPROC    *const StartTimerProc = (P_STARTTIMERPROC*) StartTimerProc_ADR;
 P_SET_HTTP_PROFILE  *const Set_HTTP_Profile = (P_SET_HTTP_PROFILE*) Set_HTTP_Profile_ADR;
-// P_SWITCH_GPRS       *const SwitchGPRS = (P_SWITCH_GPRS *) SwitchGPRS_ADR;
+// P_SWITCH_GPRS      *const SwitchGPRS = (P_SWITCH_GPRS *) SwitchGPRS_ADR;
 P_SAVE_SMS_PROFILE  *const Save_SMS_Profile = (P_SAVE_SMS_PROFILE*) Save_SMS_Profile_ADR;
 extern "C" P_OPENREADCLOSEFILE *const OpenReadCloseFile = (P_OPENREADCLOSEFILE *) OpenReadCloseFile_ADR;
 extern "C" P_MFREE  *const mfree = (P_MFREE *) mfree_ADR;
@@ -42,6 +42,6 @@ typedef void P_GetEEFULLBlock(int block, void *buf, int offset, int size);
 typedef void P_SetEEFULLBlock(int block, void *buf, int offset, int size);
 
 extern "C" P_GetEEFULLBlock	*const GetEEFULLBlock = (P_GetEEFULLBlock*) GetEEFULLBlock_ADR;
-extern "C" P_SetEEFULLBlock        *const SetEEFULLBlock = (P_SetEEFULLBlock*) SetEEFULLBlock_ADR;
+extern "C" P_SetEEFULLBlock     *const SetEEFULLBlock = (P_SetEEFULLBlock*) SetEEFULLBlock_ADR;
 
 #endif
