@@ -5,7 +5,7 @@
 #define SRES_BYTE_LEN       	4
 #define KC_BYTE_LEN         	8
 #define SIM_RSP_LEN         	(SRES_BYTE_LEN + KC_BYTE_LEN)
-#define IMSI_DATA_BYTE_LEN  	9  
+#define IMSI_DATA_BYTE_LEN  	9
 #define LOCI_DATA_BYTE_LEN      11
 #define SPN_DATA_BYTE_LEN       16
 #define SMSP_DATA_BYTE_LEN      16
@@ -36,9 +36,9 @@ typedef struct _KV_SIM_CTRL_BLOCK
 	unsigned char REAL_SIM_F14 [SPN_DATA_BYTE_LEN];
 	unsigned char REAL_SIM_LOCI[LOCI_DATA_BYTE_LEN];
 
-        unsigned char Block5400[1024];
-        ITEMSDATA items[10];
-        MENUSTRUCT test_menu;
+	unsigned char Block5400[1024];
+	ITEMSDATA items[10];
+	MENUSTRUCT test_menu;
 
 }KV_SIM_CTRL_BLOCK;
 

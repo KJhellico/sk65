@@ -223,61 +223,61 @@ void A3A8(/* in */ const unsigned char rand[16], /* in */ const unsigned char ke
   table[3] = table_3;
   table[4] = table_4;
 
-    /* ( Load RAND into last 16 bytes of input ) */
-    for (i=16; i<32; i++)
-        x[i] = rand[i-16];
+  /* ( Load RAND into last 16 bytes of input ) */
+  for (i=16; i<32; i++)
+      x[i] = rand[i-16];
 
-    /* ( Loop eight times ) */
-    for (i=1; i<9; i++) 
-    {
-        /* ( Load key into first 16 bytes of input ) */
-        for (j=0; j<16; j++)
-            x[j] = key[j];
-        /* ( Perform substitutions ) */
-        for (j=0; j<5; j++)
-            for (k=0; k<(1<<j); k++)
-                for (l=0; l<(1<<(4-j)); l++) 
-                {
-                    m = l + k*(1<<(5-j));
-                    n = m + (1<<(4-j));
-                    y = (x[m]+2*x[n]) & ((1<<(9-j))-1);
-                    z = (2*x[m]+x[n]) & ((1<<(9-j))-1);
-                    x[m] = table[j][y];
-                    x[n] = table[j][z];
-                }
-        /* ( Form bits from bytes ) */
-        for (j=0; j<32; j++)
-            for (k=0; k<4; k++)
-                bits[4*j+k] = (x[j]>>(3-k)) & 1;
-        /* ( Permutation but not on the last loop ) */
-        if (i < 8)
+  /* ( Loop eight times ) */
+  for (i=1; i<9; i++) 
+  {
+    /* ( Load key into first 16 bytes of input ) */
+    for (j=0; j<16; j++)
+      x[j] = key[j];
+    /* ( Perform substitutions ) */
+    for (j=0; j<5; j++)
+      for (k=0; k<(1<<j); k++)
+        for (l=0; l<(1<<(4-j)); l++) 
         {
-            for (j=0; j<16; j++) 
-            {
-                x[j+16] = 0;
-                for (k=0; k<8; k++) 
-                {
-                    next_bit = ((8*j + k)*17) & 127;
-                    x[j+16] |= bits[next_bit] << (7-k);
-                }
-            }
+          m = l + k*(1<<(5-j));
+          n = m + (1<<(4-j));
+          y = (x[m]+2*x[n]) & ((1<<(9-j))-1);
+          z = (2*x[m]+x[n]) & ((1<<(9-j))-1);
+          x[m] = table[j][y];
+          x[n] = table[j][z];
         }
+    /* ( Form bits from bytes ) */
+    for (j=0; j<32; j++)
+      for (k=0; k<4; k++)
+        bits[4*j+k] = (x[j]>>(3-k)) & 1;
+    /* ( Permutation but not on the last loop ) */
+    if (i < 8)
+    {
+      for (j=0; j<16; j++) 
+      {
+        x[j+16] = 0;
+        for (k=0; k<8; k++) 
+        {
+          next_bit = ((8*j + k)*17) & 127;
+          x[j+16] |= bits[next_bit] << (7-k);
+        }
+      }
     }
+  }
 
-    /*
-     * ( At this stage the vector x[] consists of 32 nibbles.
-     *   The first 8 of these are taken as the output SRES. )
-     */
+  /*
+   * ( At this stage the vector x[] consists of 32 nibbles.
+   *   The first 8 of these are taken as the output SRES. )
+   */
 
-    /* The remainder of the code is not given explicitly in the
-     * standard, but was derived by reverse-engineering.
-     */
+  /* The remainder of the code is not given explicitly in the
+   * standard, but was derived by reverse-engineering.
+   */
 
-    for (i=0; i<4; i++)
-        simoutput[i] = (x[2*i]<<4) | x[2*i+1];
-    for (i=0; i<6; i++)
-        simoutput[4+i] = (x[2*i+18]<<6) | (x[2*i+18+1]<<2)
-                | (x[2*i+18+2]>>2);
-    simoutput[4+6] = (x[2*6+18]<<6) | (x[2*6+18+1]<<2);
-    simoutput[4+7] = 0;
+  for (i=0; i<4; i++)
+    simoutput[i] = (x[2*i]<<4) | x[2*i+1];
+  for (i=0; i<6; i++)
+    simoutput[4+i] = (x[2*i+18]<<6) | (x[2*i+18+1]<<2)
+              | (x[2*i+18+2]>>2);
+  simoutput[4+6] = (x[2*6+18]<<6) | (x[2*6+18+1]<<2);
+  simoutput[4+7] = 0;
 }

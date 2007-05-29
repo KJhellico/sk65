@@ -15,9 +15,9 @@ typedef void P_MEMSET(void *s, int c, int n);
 //typedef unsigned P_GETFROMLGP(unsigned id, unsigned c);
 //typedef unsigned P_CONVLGP(unsigned b, unsigned lgpptr, unsigned one, unsigned zero);
 
-P_CreateMenu            *const CreateMenu = (P_CreateMenu*) CreateMenu_ADR;
-P_SetMenuState          *const SetMenuState = (P_SetMenuState*) SetMenuState_ADR;
-P_CloseMenu                     *const CloseMenu = (P_CloseMenu*) CloseMenu_ADR;
+P_CreateMenu     *const CreateMenu = (P_CreateMenu*) CreateMenu_ADR;
+P_SetMenuState   *const SetMenuState = (P_SetMenuState*) SetMenuState_ADR;
+P_CloseMenu      *const CloseMenu = (P_CloseMenu*) CloseMenu_ADR;
 P_GetMenuCurItem *const GetMenuCurItem = (P_GetMenuCurItem*) GetMenuCurItem_ADR;
 
 typedef void P_GetEEFULLBlock(int block, void *buf, int offset, int size);
