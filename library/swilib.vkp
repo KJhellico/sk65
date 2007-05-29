@@ -135,7 +135,7 @@
 01DC: 0xA07C656B ; 77: SetColor
 01E0: 0xA0718BCF ; 78: GetTimeFormat
 01E4: 0xA0734A15 ; 79: DrawObject2Layer(LCD_Layer *, DRWOBJ *);
-01E8: 0xA0735621 ; 7A: UpdateDisplayByLayerPtr(LCD_Layer *);
+01E8: 0x00000000 ; 807A: GBS_Cmd_4200_UpdateScreen
 01EC: 0xA02BD7A5 ; 7B: GetProfileFilter
 01F0: 0xA0968E08 ; 7C: __arm unsigned int SetVibration(unsigned int power);
 01F4: 0xA0994A6D ; 7D: IsIncognitoCall
