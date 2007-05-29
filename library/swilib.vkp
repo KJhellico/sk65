@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 21.05.2007
+; 29.05.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -88,10 +88,10 @@
 012C: 0xA07BB8A8 ; 4B: StartMidlet
 0130: 0xA075C101 ; 4C: GetMissedCallsCount
 0134: 0xA020A9D8 ; 4D: __arm void GBS_StartTimerProc(void *htimer, long ms, void ptr());
-0138: 0xA06EE397 ; 4E: __thumb int MsgBoxError(int flag, int LgpId);
+0138: 0xA06EE3A7 ; 4E: __thumb int MsgBoxError(int flag, int LgpId);
 013C: 0xA06EE405 ; 4F: __thumb int MsgBoxYesNo(int flag, int LgpID, void CallBackProc(int));
 
-0140: 0xA06EE44F ; 50: __thumb int MsgBoxOkCancel(int flag, int LgpID, void CallBackProc(int));
+0140: 0xA06EE40F ; 50: __thumb int MsgBoxOkCancel(int flag, int LgpID, void CallBackProc(int));
 0144: 0xA0A55FF1 ; 51: GetNetMode
 0148: 0xA0961118 ; 52: GetIlluminationDataTable
 014C: 0xA0D1D005 ; 53: memcmp
