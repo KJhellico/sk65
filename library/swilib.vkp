@@ -551,14 +551,14 @@
 ;07FC: 0x ; 1FF: void MEDIA_PLAYLAST();
 
 ;0800: 0x ; 200: ScreenShoot
-0804: 0xA073045B ; 201: void SetProp2ImageOrCanvas(DRWOBJ *, RECT *, int zero, IMGHDR *Image, int bleed_x, int bleed_y);
-0808: 0xA084943F ; 202: void fillTriangle(int x1, int y1, int x2, int y2, int x3, int y3, int flag, char *pen, char *brush);
-080C: 0xA073185B ; 203: void SetPixel(int x,int y,char *color);
-0810: 0xA07C4EA7 ; 204: void drawArc(int x1,int y1,int x2,int y2,int a1,int a2,int flag,char *pen,char *brush);
+0804: 0xA073045B ; 201: __thumb void SetProp2ImageOrCanvas(DRWOBJ *, RECT *, int zero, IMGHDR *Image, int bleed_x, int bleed_y);
+0808: 0xA084943F ; 202: __thumb void fillTriangle(int x1, int y1, int x2, int y2, int x3, int y3, int flag, char *pen, char *brush);
+080C: 0xA073185B ; 203: __thumb void SetPixel(int x,int y,char *color);
+0810: 0xA07C4EA7 ; 204: __thumb void drawArc(int x1,int y1,int x2,int y2,int a1,int a2,int flag,char *pen,char *brush);
 0814: 0xA072EC55 ; 205: SetProp2Square_v1
 0818: 0xA0D1D3AD ; 206: __thumb void srand(unsigned int seed);
 081C: 0xA07C863F ; 207: __thumb DrawScrollString(WSHDR *WSHDR,int x1,int y1,int x2,int y2,int xdisp,int font,int text_attribute,char *Pen,char *Brush);
-0820: 0xA0734B57 ; 208: int Get_WS_width(WSHDR *ws, int font);
+0820: 0xA0734B57 ; 208: __thumb int Get_WS_width(WSHDR *ws, int font);
 0824: 0xA06EAF01 ; 209: __thumb void *FindGUIbyId(int id, CSM_RAM **csm);
 0828: 0xA099A1E9 ; 20A: __thumb void EDIT_SetDate(void *gui,int n,TDate *dd);
 082C: 0xA099A1FD ; 20B: __thumb void EDIT_SetTime(void *gui,int n,TTime *tt);
@@ -568,5 +568,11 @@
 083C: 0xA06EB657 ; 20F: __thumb int ConstructEditDate(EDITCONTROL *EditControl,TDate *date);
 
 0840: 0xA06EEB91 ; 210: __thumb int GetCurGuiID(void);
+0844: 0x000000A1 ; 8211: GBS_Cmd_4209_RefreshScreensaver
+0848: 0xA03ACDE8 ; 212: __arm int CardExplGetCurItem(void *csm);
+084C: 0xA0339528 ; 213: __arm void CardExplGetFName(void *csm, int cur_item, WSHDR *dest);
+0850: 0xA06E91E9 ; 214: __thumb void wstrcpybypos(WSHDR *dest,WSHDR *src,int from,int len);
+0854: 0xA06E9279 ; 215: __thumb void wsRemoveChars(WSHDR *ws,int from,int to)
+0858: 0xA06E882D ; 216: __thumb void wstrcarprintf(WSHDR *,const char *format,...);
 #pragma disable old_equal_ff
 +0
