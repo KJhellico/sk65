@@ -73,8 +73,12 @@ void SIM_Cmd_Hook(int what, int cla, int ins,
                 int SendLen, unsigned char *SendBuf,
                 int RecvLen, unsigned char *RecvBuf)
 {
+  int flag = 0;
+  unsigned char SendBuf2[16];
+  
   MultisimINIT();
 
+  
   switch (ins)
   {
     case CONST_Run_GSM_A38:
@@ -135,7 +139,8 @@ void SIM_Cmd_Hook(int what, int cla, int ins,
           {
             LIB_Memcpy(&Block5400[(SIM_number-1) * 0x50 + 0x40], SendBuf, LOCI_DATA_BYTE_LEN);
             SetEEFULLBlock(5400, &Block5400[(SIM_number-1) * 0x50 + 0x40], (SIM_number-1) * 0x50 + 0x40, LOCI_DATA_BYTE_LEN);
-            LIB_Memcpy(SendBuf, REAL_SIM_LOCI, LOCI_DATA_BYTE_LEN);
+            LIB_Memcpy(SendBuf2, REAL_SIM_LOCI, LOCI_DATA_BYTE_LEN);
+            flag=1;
           }      //SaveSIMData
           else
             LIB_Memcpy(REAL_SIM_LOCI, SendBuf, LOCI_DATA_BYTE_LEN);
@@ -161,7 +166,10 @@ void SIM_Cmd_Hook(int what, int cla, int ins,
       break;      
   }                                      
 
-  SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf, RecvLen, RecvBuf);
+  if(flag)
+    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf2, RecvLen, RecvBuf);
+  else
+    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf, RecvLen, RecvBuf);
 }
 
 void SIM_Rsp_Hook(void)
