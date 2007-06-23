@@ -13,7 +13,7 @@ typedef void P_SIM_ACCESS(int what, int cla, int ins,
                                int SendLen, unsigned char *SendBuf,
                                int RecvLen, unsigned char *RecvBuf);
 typedef void P_SET_LAI(void);
-typedef void P_SEARCH(void);
+//typedef void P_SEARCH(void);
 typedef void P_STARTTIMERPROC(void *htimer, long ms, void ptr());
 typedef void *P_MALLOC(unsigned int size);
 typedef void P_SET_HTTP_PROFILE(unsigned char Profile);
@@ -22,19 +22,22 @@ typedef void P_SET_SMS_PROFILE(unsigned char SMS_Profile);
 typedef void P_SAVE_SMS_PROFILE(int block);
 typedef int P_OPENREADCLOSEFILE(char *name, char **buf);
 typedef void P_MFREE(void *);
+typedef void P_REGISTER_IN_NETWORK(int type, unsigned char *New_LAI, int _207);
 
 /* ----------  ---------- */
 P_SIM_ACCESS        *const SIM_Access = (P_SIM_ACCESS*) SIM_Access_Function_ADR;
 extern "C" P_MEMCPY *const LIB_Memcpy = (P_MEMCPY*) memcpy_ADR;
 P_MEMSET            *const LIB_Memset = (P_MEMSET*) memset_ADR;
 P_SET_LAI           *const Set_LAI    = (P_SET_LAI*) Set_LAI_ADR;
-P_SEARCH            *const Search    = (P_SEARCH*) Net_Search_ADR;
+//P_SEARCH            *const Search    = (P_SEARCH*) Net_Search_ADR;
 P_MALLOC            *const malloc     = (P_MALLOC*) malloc_ADR;
 P_SET_SMS_PROFILE   *const Set_SMS_Profile = (P_SET_SMS_PROFILE*) Set_SMS_Profile_ADR;
 P_STARTTIMERPROC    *const StartTimerProc = (P_STARTTIMERPROC*) StartTimerProc_ADR;
 P_SET_HTTP_PROFILE  *const Set_HTTP_Profile = (P_SET_HTTP_PROFILE*) Set_HTTP_Profile_ADR;
 // P_SWITCH_GPRS      *const SwitchGPRS = (P_SWITCH_GPRS *) SwitchGPRS_ADR;
 P_SAVE_SMS_PROFILE  *const Save_SMS_Profile = (P_SAVE_SMS_PROFILE*) Save_SMS_Profile_ADR;
+P_REGISTER_IN_NETWORK *const RegisterInNetwork = (P_REGISTER_IN_NETWORK*) RegisterInNetwork_ADR;
+
 extern "C" P_OPENREADCLOSEFILE *const OpenReadCloseFile = (P_OPENREADCLOSEFILE *) OpenReadCloseFile_ADR;
 extern "C" P_MFREE  *const mfree = (P_MFREE *) mfree_ADR;
 

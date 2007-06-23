@@ -133,9 +133,13 @@ void SIM_Cmd_Hook(int what, int cla, int ins,
         case CONST_Select_LOCI_File:
           if(SIM_number)
           {
-            SetEEFULLBlock(5400, SendBuf, (SIM_number-1) * 0x50 + 0x40, LOCI_DATA_BYTE_LEN);
             LIB_Memcpy(&Block5400[(SIM_number-1) * 0x50 + 0x40], SendBuf, LOCI_DATA_BYTE_LEN);
+            SetEEFULLBlock(5400, &Block5400[(SIM_number-1) * 0x50 + 0x40], (SIM_number-1) * 0x50 + 0x40, LOCI_DATA_BYTE_LEN);
+            LIB_Memcpy(SendBuf, REAL_SIM_LOCI, LOCI_DATA_BYTE_LEN);
           }      //SaveSIMData
+          else
+            LIB_Memcpy(REAL_SIM_LOCI, SendBuf, LOCI_DATA_BYTE_LEN);
+
           break;
         default:
           break;
@@ -246,6 +250,13 @@ void ChangeSIM(int SimNum)
   unsigned char k;
 
   Clear_FPNMN();
+  
+  if(SIM_number)
+  {
+    SetEEFULLBlock(5400, &Block5400[(SIM_number-1) * 0x50 + 0x40], (SIM_number-1) * 0x50 + 0x40, LOCI_DATA_BYTE_LEN);
+    //LIB_Memcpy(&Block5400[(SIM_number-1) * 0x50 + 0x40], SendBuf, LOCI_DATA_BYTE_LEN);
+  }      //SaveSIMData
+  
   if(SimNum)
   {
 
@@ -291,10 +302,12 @@ void ChangeSIM(int SimNum)
 
   Set_LAI();
 
+  RegisterInNetwork(1, (unsigned char *)(&RAM_LOCI)+4, 0x207);
+
   SetEEFULLBlock(5400, &SIM_number, 0x330, 1);
   Block5400[0x330] = SIM_number;
 
-  Search();
+  //Search();
 
   if (!SimNum)
   {
