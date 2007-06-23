@@ -3,6 +3,7 @@
 #define memset_ADR                0xA166AAE8
 #define malloc_ADR                0xA0820F98
 #define Set_LAI_ADR               0xA1319307
+#define RegisterInNetwork_ADR     0xA0B90A17
 #define Net_Search_ADR            0xA0B90A71
 #define SetEEFULLBlock_ADR        0xA122D380
 #define GetEEFULLBlock_ADR        0xA122D23C
