@@ -826,6 +826,9 @@
       <name>$PROJ_DIR$\..\shared\a3a8.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\shared\file.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\shared\sim_access.c</name>
     </file>
   </group>
