@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 30.06.2007
+; 14.07.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -48,14 +48,14 @@
 0094: 0xA02A77E3 ; 25: __thumb void DrawCanvas(void *data, int x1, int y1, int x2, int y2, int flag_one);
 0098: 0xA0730375 ; 26: __thumb void DrawImgBW(unsigned int x, unsigned int y, unsigned int picture, char *pen, char *brush);
 009C: 0xA02A7167 ; 27: AddIconToIconbar
-;00A0: 0x ; 28: 
+00A0: 0xA0D34324 ; 28: double fp_sint2fp(signed int i);
 ;00A4: 0x ; 29: 
 00A8: 0xA0961970 ; 2A: __arm int *GetEELiteBlockAddress(short blocknum);
-;00AC: 0x ; 2B: 
+00AC: 0xA0D341C4 ; 2B: signed int fp_fp2sint(double f);
 ;00B0: 0x ; 2C: 
-;00B4: 0x ; 2D: 
-;00B8: 0x ; 2E: 
-;00BC: 0x ; 2F: 
+00B4: 0xA0D33584 ; 2D: double fp_add(double addend1, double addend2);
+00B8: 0xA0D344E4 ; 2E: double fp_mul(double factor1, double factor2);
+00BC: 0xA0D33B98 ; 2F: double fp_div(double divisor, double divident)
 
 ;00C0: 0x ; 30: 
 00C4: 0xA0D1DB0D ; 31: StrChrRev
@@ -215,7 +215,7 @@
 ;0308: 0x   ; C2: GetAllPatchesByInject
 030C: 0xA0FCF3A1 ; C3: ProcessFiles
 0310: 0xA0FC0C01 ; C4: GetBuffer
-;0314: 0x   ; C5: 
+;0314: 0x   ; C5: char IsIdleUiOnTop();
 ;0318: 0x   ; C6: __arm char GetAkkuCapacity();
 ;031C: 0x   ; C7: CallLibFunByNumber
 0320: 0xA8E707E4 ; C8: RamCap
@@ -580,6 +580,6 @@
 0868: 0xA099A2F1 ; 21A: __thumb int EDIT_SetTextInvert(void *gui,int cursor_pos,int len);
 086C: 0xA099A2FB ; 21B: __thumb void EDIT_RemoveTextInvert(void *gui);
 0870: 0xA099A337 ; 21C: __thumb int EDIT_IsBusy(void *gui);
-0874: 0xA0705985 ; 21D: __thumb int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type);
+0874: 0xA0705985 ; 21D: __thumb int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_adr)(int), void (*mfree_adr)(void));
 #pragma disable old_equal_ff
 +0
