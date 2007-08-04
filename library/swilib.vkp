@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 21.07.2007
+; 04.08.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -583,5 +583,15 @@
 0874: 0xA0705985 ; 21D: __thumb int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_adr)(int), void (*mfree_adr)(void));
 0878: 0xA06EED55 ; 21E: __thumb void FocusGUI(int id);
 087C: 0xA06EED65 ; 21F: __thumb void UnfocusGUI(void);
+
+;0880: 0x ; 220: IsSliderClosed
+;0884: 0x ; 221: __arm void SetCpuClockLow(2);
+;0888: 0x ; 222: __arm void SetCpuClockTempHi(2);
+;088C: 0x ; 223: IsMediaPlayerInBackground
+;0890: 0x ; 224: CloseMediaPlayer
+0894: 0xA02F0E84 ; 225: __arm int PlayMelody_ChangeVolume(int handle,int volume);
+0898: 0xA02F125C ; 226: __arm int PlayMelody_StopPlayback(int handle);
+089C: 0xA02F12FC ; 227: __arm int PlayMelody_PausePlayback(int handle);
+08A0: 0xA02F1340 ; 228: __arm int PlayMelody_ResumePlayBack(int handle);
 #pragma disable old_equal_ff
 +0
