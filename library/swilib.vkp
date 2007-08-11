@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 04.08.2007
+; 11.08.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -584,9 +584,9 @@
 0878: 0xA06EED55 ; 21E: __thumb void FocusGUI(int id);
 087C: 0xA06EED65 ; 21F: __thumb void UnfocusGUI(void);
 
-;0880: 0x ; 220: IsSliderClosed
-;0884: 0x ; 221: __arm void SetCpuClockLow(2);
-;0888: 0x ; 222: __arm void SetCpuClockTempHi(2);
+0880: 0xA0738A05 ; 220: IsSliderClosed ; Qwerty state (0 - open, 1 - closed, 2 - half-open)
+0884: 0xA09D6C70 ; 221: __arm void SetCpuClockLow(2);
+0888: 0xA09D6C58 ; 222: __arm void SetCpuClockTempHi(2);
 ;088C: 0x ; 223: IsMediaPlayerInBackground
 ;0890: 0x ; 224: CloseMediaPlayer
 0894: 0xA02F0E84 ; 225: __arm int PlayMelody_ChangeVolume(int handle,int volume);
