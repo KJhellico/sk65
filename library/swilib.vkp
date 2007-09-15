@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 04.09.2007
+; 15.09.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -225,7 +225,7 @@
 0330: 0xA8E8BDE4 ; CC: RamMissedCalls
 0334: 0xA865D158 ; CD: RamMissedSMS
 0338: 0xA8E403AC ; CE: RamDateTime
-033C: 0xA8E881DC ; CF: RamAlarm
+033C: 0xA8E881DC ; CF: char *RamAlarm();
 
 0340: 0xA8EB8B64 ; D0: RamAccPoint
 0344: 0xA8E3A610 ; D1: RamScreensaver
@@ -595,5 +595,13 @@
 08A0: 0xA02F1340 ; 228: __arm int PlayMelody_ResumePlayBack(int handle);
 08A4: 0xA0D1DEA8 ; 229: __arm void longjmp(jmp_buf, int);
 08A8: 0xA070CBF3 ; 22A: __thumb void FreeGSMTXTpkt(void *pkt);
+;08AC: 0x ; 22B: CreateRadioButtonList(RadioButtonListDesc *, char num_of_radiobuttons, 0, 0, char prev_setting, void HandlerFunc(int), char flag);
+;08B0: 0x ; 22C: pdcache_getval(char *return, int maxlen_of_return_str, char cachetype, char *pd_entry_identifier.class, char *pd_entry_identifier.sub);
+;08B4: 0x ; 22D: pdcache_setval(char *new_value, char cachetype, char *pd_entry_identifier.class, char *pd_entry_identifier.sub);
+;08B8: 0x ; 22E: OpenExplorer(ExplOpenDesc *);
+08BC: 0xA8E403D0 ; 22F: TDateTimeSettings *RamDateTimeSettings;
+
+08D0: 0xA0717CE3 ; 230: __thumb int GetTimeZoneShift(int param1, int param2, int timeZone);
+08D4: 0xA8E40378 ; 231: TAppointment *RamAppointment;
 #pragma disable old_equal_ff
 +0
