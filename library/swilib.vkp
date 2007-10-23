@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 15.09.2007
+; 23.10.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -20,7 +20,7 @@
 ;002C: 0x ; 0B: __arm int fread(int FileHandler, void *cBuffer, int iByteCount, unsigned int *ErrorNumber);
 ;0030: 0x ; 0C: __arm unsigned int fwrite(int FileHandler, char * cBuffer, int iByteCount, unsigned int *ErrorNumber);
 0034: 0xA0945974 ; 0D: __arm void fclose(int FileHandler, unsigned int *ErrorNumber);
-;0038: 0x ; 0E: 
+;0038: 0x ; 0E:
 003C: 0xA09459D4 ; 0F: __arm unsigned int lseek(int FileHandler, unsigned int offset, unsigned int origin, unsigned int *ErrorNumber, unsigned int *ErrorNumber2);
 
 0040: 0xA0945804 ; 10: __arm int mkdir(const char * cFileName, unsigned int *ErrorNumber);
@@ -49,15 +49,15 @@
 0098: 0xA0730375 ; 26: __thumb void DrawImgBW(unsigned int x, unsigned int y, unsigned int picture, char *pen, char *brush);
 009C: 0xA02A7167 ; 27: AddIconToIconbar
 00A0: 0xA0D34324 ; 28: double fp_sint2fp(signed int i);
-;00A4: 0x ; 29: 
+;00A4: 0x ; 29:
 00A8: 0xA0961970 ; 2A: __arm int *GetEELiteBlockAddress(short blocknum);
 00AC: 0xA0D341C4 ; 2B: signed int fp_fp2sint(double f);
-;00B0: 0x ; 2C: 
+00B0: 0xA0944084 ; 2C: getEEFullBlockSizeVersion(int block, void *buf1, void *buf2)
 00B4: 0xA0D33584 ; 2D: double fp_add(double addend1, double addend2);
 00B8: 0xA0D344E4 ; 2E: double fp_mul(double factor1, double factor2);
 00BC: 0xA0D33B98 ; 2F: double fp_div(double divisor, double divident)
 
-;00C0: 0x ; 30: 
+;00C0: 0x ; 30:
 00C4: 0xA0D1DB0D ; 31: StrChrRev
 00C8: 0xA02F8600 ; 32: __arm void PlaySound(long param1, long param2, long param3, long tone, long param5);
 00CC: 0xA02EE7E4 ; 33: PlaySound2
@@ -268,7 +268,7 @@
 03D0: 0xA0D201DD  ; F4: __thumb size_t strcspn(const char *s1, const char *s2);
 03D4: 0xA8E4C3C4  ; F5: Ram_LCD_Overlay_Layer
 03D8: 0xA8E40D60  ; F6: RAM_LCD_Layer_Base_Ptr
-;03DC: 0x  ; F7: 
+;03DC: 0x  ; F7:
 03E0: 0xA0FE0000 ; F8: Additional_PIT_address
 03E4: 0x00000509 ; F9: Additional_PIT_start
 03E8: 0x00000577 ; FA: Additional_PIT_end
@@ -603,5 +603,12 @@
 
 08D0: 0xA0717CE3 ; 230: __thumb int GetTimeZoneShift(int param1, int param2, int timeZone);
 08D4: 0xA8E40378 ; 231: TAppointment *RamAppointment;
+;08D8: 0x ; 232: GBS_DestroyMessage(GBS_MSG *)
+;08DC: 0x ; 233: void GetAllEmail()
+;08E0: 0x ; 234: int GetLunarDate(struct DateInfo* pdate, struct DateInfo* pLdate);
+;08E4: 0x ; 235: int GetLunarYearID(int year);
+;08E8: 0x ; 236: int GetLunarAnimal(int year);;
+;08EC: 0x ; 237: char *RamIconBar
+08F0: 0xA070CB9D ; 238: __thumb void SendAutoUSSDack(void);
 #pragma disable old_equal_ff
 +0
