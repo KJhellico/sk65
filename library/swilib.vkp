@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 23.10.2007
+; 31.10.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -52,7 +52,7 @@
 ;00A4: 0x ; 29:
 00A8: 0xA0961970 ; 2A: __arm int *GetEELiteBlockAddress(short blocknum);
 00AC: 0xA0D341C4 ; 2B: signed int fp_fp2sint(double f);
-00B0: 0xA0944084 ; 2C: getEEFullBlockSizeVersion(int block, void *buf1, void *buf2)
+00B0: 0xA0944084 ; 2C: __arm int EEFullGetBlockInfo(unsigned int block,int *size,char *version);
 00B4: 0xA0D33584 ; 2D: double fp_add(double addend1, double addend2);
 00B8: 0xA0D344E4 ; 2E: double fp_mul(double factor1, double factor2);
 00BC: 0xA0D33B98 ; 2F: double fp_div(double divisor, double divident)
@@ -148,8 +148,8 @@
 020C: 0xA02DA1EC ; 83: GetPathOfFoundFile
 0210: 0xA09458D4 ; 84: __arm int GetFileStats(const char *cFileName, FSTATS * StatBuffer, unsigned int *errornumber);
 0214: 0xA02084BD ; 85: StrCmpNoCase
-0218: 0xA0943FAC ; 86: ReadEEPROMData
-021C: 0xA09440F0 ; 87: WriteEEPROMData
+0218: 0xA0943FAC ; 86: __arm void EEFullReadBlock(int block, void *buf, int offset, int size, int cepid, int msg);
+021C: 0xA09440F0 ; 87: __arm void EEFullWriteBlock(int block, void *buf, int offset, int size, int cepid, int msg);
 ;0220: 0x   ; 88: GetAccessoryType
 ;0224: 0x   ; 89: GetLangMesIntoWS
 0228: 0xA0945670 ; 8A: GetFreeFlexSpace
@@ -610,5 +610,7 @@
 ;08E8: 0x ; 236: int GetLunarAnimal(int year);;
 ;08EC: 0x ; 237: char *RamIconBar
 08F0: 0xA070CB9D ; 238: __thumb void SendAutoUSSDack(void);
+08F4: 0xA09443B0 ; 239: __arm int EEFullDeleteBlock(unsigned int block,int cepid,int msg);
+08F8: 0xA09444FC ; 23A: __arm int EEFullCreateBlock(unsigned int block,int size,int version,int cepid,int msg);
 #pragma disable old_equal_ff
 +0
