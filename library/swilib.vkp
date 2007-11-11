@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 31.10.2007
+; 11.11.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -612,5 +612,7 @@
 08F0: 0xA070CB9D ; 238: __thumb void SendAutoUSSDack(void);
 08F4: 0xA09443B0 ; 239: __arm int EEFullDeleteBlock(unsigned int block,int cepid,int msg);
 08F8: 0xA09444FC ; 23A: __arm int EEFullCreateBlock(unsigned int block,int size,int version,int cepid,int msg);
+;08FC: 0x ; 23B: __thumb void DisableIconBar(int disable);
+0900: 0xA07B3610 ; 23C : __arm int SetCurrentGPRSProfile(int profile);
 #pragma disable old_equal_ff
 +0
