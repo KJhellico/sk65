@@ -165,7 +165,7 @@
         </option>
         <option>
           <name>CCListAssFile</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCListAssSource</name>
@@ -534,7 +534,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>..\elf2vkp SK65v50\Exe\multisim.elf vkp\sk65v50_multisim.vkp c:\temp\sk_full.bin</postbuild>
+        <postbuild>..\elf2vkp SK65v50\Exe\multisim.elf vkp\sk65v50_multisim.vkp e:\!Mobile\Fullflash\SK_Full.bin</postbuild>
       </data>
     </settings>
     <settings>
@@ -989,7 +989,7 @@
         </option>
         <option>
           <name>CCListAssFile</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCListAssSource</name>
@@ -1813,7 +1813,7 @@
         </option>
         <option>
           <name>CCListAssFile</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCListAssSource</name>
@@ -2182,7 +2182,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>..\elf2vkp C75v22\Exe\multisim.elf vkp\c75v22_multisim.vkp f:\c75v22\c75v22.bin</postbuild>
+        <postbuild>..\elf2vkp C75v22\Exe\multisim.elf vkp\c75v22_multisim.vkp e:\!Mobile\Fullflash\C75v22.bin</postbuild>
       </data>
     </settings>
     <settings>
@@ -2636,7 +2636,7 @@
         </option>
         <option>
           <name>CCListAssFile</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCListAssSource</name>
@@ -3005,7 +3005,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>..\elf2vkp CX70v56\Exe\multisim.elf vkp\cx70v56_multisim.vkp f:\cx70v56\cx70v56.bin</postbuild>
+        <postbuild>..\elf2vkp CX70v56\Exe\multisim.elf vkp\cx70v56_multisim.vkp e:\!Mobile\Fullflash\cx70v56.bin</postbuild>
       </data>
     </settings>
     <settings>
