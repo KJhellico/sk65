@@ -240,14 +240,13 @@ void ChangeSIM(int SimNum)
 
   Clear_FPNMN();
 
-  k = (SIM_number-1) * 0x50;
   if (SIM_number)
   {
-    SetEEFULLBlock(5400, &Block5400[k + 0x40], k + 0x40, LOCI_DATA_BYTE_LEN);
-    //memcpy(&Block5400[(SIM_number-1) * 0x50 + 0x40], SendBuf, LOCI_DATA_BYTE_LEN);
+    SetEEFULLBlock(5400, &Block5400[(SIM_number-1) * 0x50 + 0x40], (SIM_number-1) * 0x50 + 0x40, LOCI_DATA_BYTE_LEN);
   }      //SaveSIMData
 
   SIM_number = SimNum;
+  k = (SIM_number-1) * 0x50;
   if (SIM_number)
   {
     if (Block5400[k] == 0) // if sim data present
@@ -335,7 +334,7 @@ void SaveHTTPProfile(int profile)
     k = 0x331;
   else
     k = (SIM_number-1) * 0x50 + 0x0F;
-  if (Block5400[k] != profile)
+  if (Block5400[k] != profile && Block5400[k] != 0xFF)
   {
     Block5400[k] = profile;
     SetEEFULLBlock(5400, &Block5400[k], k, 1);
@@ -355,7 +354,7 @@ void SaveSMSProfile(char profile)
     k = 0x332;
   else
     k = (SIM_number-1) * 0x50 + 0x0E;
-  if (Block5400[k] != profile)
+  if (Block5400[k] != profile && Block5400[k] != 0xFF)
   {
     Block5400[k] = profile;
     SetEEFULLBlock(5400, &Block5400[k], k, 1);
