@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 06.12.2007
+; 25.12.2007
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -619,5 +619,6 @@
 08FC: 0xA0C7D5E1 ; 23F: __thumb void MD5_Final(unsigned char *md, MD5_CTX *c);
 
 0900: 0xA0C7E069 ; 240: __thumb char *MD5_Hash(const unsigned char *data, unsigned long n, unsigned char *md);
+0904: 0xA0717FFB ; 241: __thumb void SetDateTime(TDate *, TTime *);
 #pragma disable old_equal_ff
 +0
