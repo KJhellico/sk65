@@ -5,6 +5,7 @@
 #define memset_ADR                0xA0EF4BC0
 #define malloc_ADR                0xA0203C24
 #define Set_LAI_ADR               0xA0A87D9B
+#define RegisterInNetwork_ADR     0xA0837FB3
 #define Net_Search_ADR            0xA083800D
 #define SetEEFULLBlock_ADR        0xA07CABB8
 #define GetEEFULLBlock_ADR        0xA07CAA74
@@ -28,8 +29,8 @@
 #define Set_SMS_Profile_ADR       0xA083D035
 #define StartTimerProc_ADR        0xA020AF00
 
-#define Current_SMS_Profile_ADR   0x
-#define Save_SMS_Profile_ADR      0x
+#define Current_SMS_Profile_ADR   0xA852F9F4
+#define Save_SMS_Profile_ADR      0xA050CCA9
 
-#define OpenReadCloseFile_ADR     0x
-#define mfree_ADR                 0x
+#define OpenReadCloseFile_ADR     0xA08F9C2F
+#define mfree_ADR                 0xA0203C8C

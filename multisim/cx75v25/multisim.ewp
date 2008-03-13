@@ -107,7 +107,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>4.31A</state>
+          <state>4.41A</state>
         </option>
         <option>
           <name>GeneralMisraRules</name>
@@ -132,7 +132,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>13</version>
+        <version>14</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -343,6 +343,11 @@
           <name>CCStdIncludePath</name>
           <state>$TOOLKIT_DIR$\INC\</state>
         </option>
+        <option>
+          <name>CCInlineThreshold</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -529,7 +534,7 @@
       <archiveVersion>1</archiveVersion>
       <data>
         <prebuild></prebuild>
-        <postbuild>..\elf2vkp Release\Exe\multisim.elf multisim.vkp c:\temp\sk_full.bin</postbuild>
+        <postbuild>..\elf2vkp Release\Exe\multisim.elf multisim.vkp e:\!Mobile\Fullflash\CX75v25.bin</postbuild>
       </data>
     </settings>
     <settings>
@@ -824,6 +829,9 @@
     <name>emulator</name>
     <file>
       <name>$PROJ_DIR$\..\shared\a3a8.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\shared\file.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\shared\sim_access.c</name>
