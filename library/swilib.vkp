@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 21.06.2008
+; 13.07.2008
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -656,6 +656,40 @@
 0984: 0xA0302304 ; 261: __arm int Obs_SetRotation(HObj hObj, int angle);
 0988: 0xA0306ED0 ; 262: __arm int Obs_GetInfo (HObj hObj, int unk_0or1);
 098C: 0xA03021C0 ; 263: __arm int Obs_SetScaling (HObj hObj, int unk5);
+0990: 0xA0309664 ; 264: __arm int Obs_TranslateMessageGBS (GBS_MSG *msg, OBSevent *event_handler);
+0994: 0xA0307384 ; 265: __arm int Obs_Pause (HObj hObj);
+0998: 0xA0307630 ; 266: __arm int Obs_Resume (HObj hObj);
+099C: 0xA03074AC ; 267: __arm int Obs_Stop (HObj hObj);
+;09A0: 0x ; 268: __arm int Obs_Prepare (HObj hObj);
+;09A4: 0x ; 269: __arm int Obs_SetRenderOffset (HObj hObj,short x,short y);
+09A8: 0xA03046B0 ; 26A: __arm int Obs_SetPosition (HObj hObj,int ms);
+;09AC: 0x ; 26B: __arm int Obs_Mam_SetPurpose (HObj hObj,int ms);
+;09B0: 0x ; 26C: __arm int Obs_Sound_SetVolumeEx (HObj hObj, char vol, char delta);
+;09B4: 0x ; 26D: __arm int Obs_Sound_GetVolume (HObj hObj, char *vol);
+;09B8: 0x ; 26E:
+;09BC: 0x ; 26F:
+
+;09C0: 0x ; 270:
+;09C4: 0x ; 271:
+;09C8: 0x ; 272:
+;09CC: 0x ; 273:
+;09D0: 0x ; 274:
+;09D4: 0x ; 275:
+;09D8: 0x ; 276:
+;09DC: 0x ; 277:
+;09E0: 0x ; 278:
+;09E4: 0x ; 279:
+;09E8: 0x ; 27A:
+;09EC: 0x ; 27B:
+;09F0: 0x ; 27C:
+;09F4: 0x ; 27D:
+;09F8: 0x ; 27E:
+;09FC: 0x ; 27F:
+
+;0A00: 0x ; 280:
+;0A04: 0x ; 281: __arm char *RamIsRunJava();
+;0A08: 0x ; 282: __arm char *RamIsRunCamera();
+0A0C: 0xA02E9FA4 ; 283: __arm int runMidletLinkablely(const char *midlet_name, WSHDR *filename);
 
 #pragma disable old_equal_ff
 +0
