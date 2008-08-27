@@ -12,14 +12,14 @@ a       EQU     b
   PUBLIC HeaderIcon
   PUBLIC IconIDList
 
-Msg_dispatch_ret               DCD 0xA1348212+1
-csa1_ret                       DCD 0xA13475F0+1
-csa2_ret                       DCD 0xA13479A2+1
-SetHTTPProfile_ret             DCD 0xA0CD1174
+Msg_dispatch_ret               DCD 0xA0AB2B3A+1
+csa1_ret                       DCD 0xA0A891E0+1
+csa2_ret                       DCD 0xA0A89592+1
+SetHTTPProfile_ret             DCD 0xA0882F38
 
-PIC_SIM_insert                 EQU 0x333
-PIC_r_sel                      EQU 0x369
-PIC_r_unsel                    EQU 0x368
+PIC_SIM_insert                 EQU 0x34D
+PIC_r_sel                      EQU 0x381
+PIC_r_unsel                    EQU 0x380
 
 HeaderIcon                     DCD PIC_SIM_insert, 0
 IconIDList                     DCD PIC_r_sel, PIC_r_unsel
@@ -55,6 +55,6 @@ IconIDList                     DCD PIC_r_sel, PIC_r_unsel
 
   defadr OpenReadCloseFile,    0xA0C378FF
   defadr mfree,                0xA0821000
-  defadr IsGPRSConnected,      0xA127AC91
+  defadr IsGPRSConnected,      0xA0AED489
 
   END

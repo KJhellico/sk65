@@ -162,10 +162,10 @@ void SIM_Cmd_Hook(int what, int cla, int ins,
       break;
   }
 
-  if (flag)
-    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf2, RecvLen, RecvBuf);
-  else
-    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf, RecvLen, RecvBuf);
+//  if (flag)
+    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, flag?SendBuf2:SendBuf, RecvLen, RecvBuf);
+//  else
+//    SIM_Access(what, cla, ins, p1, p2, rw, SendLen, SendBuf, RecvLen, RecvBuf);
 }
 
 void SIM_Rsp_Hook(void)
@@ -223,7 +223,7 @@ void ChangeSIM(int SimNum);
 
 void ReturnToPhysicalSIM(void)
 {
-  if (RAM_STBY)
+  if ((RAM_STBY)&&!(IsGPRSConnected()))
     if (SIM_number == 0)
       ChangeSIM(Block5400[0x334]);
     else

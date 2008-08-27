@@ -1,9 +1,9 @@
-defadr	MACRO	a,b
-	PUBLIC	a
-a	EQU	b
-	ENDM
+defadr  MACRO   a,b
+        PUBLIC  a
+a       EQU     b
+        ENDM
 
-  RSEG	CODE:CODE
+  RSEG  CODE:CODE
 
   PUBLIC csa1_ret
   PUBLIC csa2_ret
@@ -55,5 +55,6 @@ IconIDList                     DCD PIC_r_sel, PIC_r_unsel
 
   defadr OpenReadCloseFile,    0xA07F051B
   defadr mfree,                0xA0203744
+  defadr IsGPRSConnected,      0xA09FF4A9
 
   END
