@@ -30,4 +30,6 @@ extern void RegisterInNetwork(int type, unsigned char *New_LAI, int _207);
 extern void GetEEFULLBlock(int block, void *buf, int offset, int size);
 extern void SetEEFULLBlock(int block, void *buf, int offset, int size);
 
+extern char IsGPRSConnected(void);
+
 #endif
