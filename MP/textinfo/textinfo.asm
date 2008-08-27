@@ -113,7 +113,7 @@ Capacity:
         mov      r0, #4
         bl       ShowPercent
 ;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-GPRS:   
+GPRS:
         CallLib  RefreshGPRSTraffic
         CallLib  GetGPRSTrafficPointer
         ldr      r1, [r0]
@@ -150,11 +150,11 @@ CpuLoad:
         bl      ShowPercent
         b       _ex
 ; --------------------------------------------------------------------
-ShowKB: 
+ShowKB:
         lsr     r2, r1, #10      ;  r0 - id, r1 - size (Byte)
         mov     r1, #GPRSStr-FormatStrings
         b       drawfs
-; --------------------------------------------------------------------          
+; --------------------------------------------------------------------
 ShowPercent:
         mov     r1, #CapStr-FormatStrings
 ; --------------------------------------------------------------------
@@ -177,11 +177,20 @@ drawfs:
         lsr        r0, r1, #15
         bne        exdrawfs
         ldrh       r2, [r5,#14]  ; y
+
+; автоопределение ширины
+;        add        r0, sp, #36
+;        ldrb       r1, [r5, #8] ; font
+;        CallBigLib Get_WS_width
+;        ldrh       r1, [r5,#12]  ; x
+;        add        r3, r0, r1 ; x+width
+
         ldrb       r3, [r5,#10]  ; width
+
         add        r3, r1     ; end x
         ldrb       r0, [r5,#11]  ; height
         add        r0, r2     ; end y
-        str        r0, [sp] 
+        str        r0, [sp]
 
         add        r4, sp, #20
         stmia      r4!, {r0-r3}
@@ -197,7 +206,7 @@ drawfs:
         mov        r4, r5
         add        r0, sp, #4
         stmia      r0!, {r1-r4}
-        
+
         add        r4, sp, #20
         ldmia      r4!, {r0-r3}
 
