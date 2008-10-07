@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 20.09.2008
+; 27.09.2008
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -717,6 +717,25 @@
 ;0A6C: 0x ; 29B: GetTypeOfBTHeadset
 0A70: 0xA8E38A3D ; 29C: char *RamInputLanguage();
 ;0A74: 0x ; 29D: char *RamDisplayLanguage();
+;0A78: 0x ; 29E:
+;0A7C: 0x ; 29F:
+
+;0A80: 0x ; 2A0: int GetAlarmclockState(int state);
+;0A84: 0x ; 2A1:
+;0A88: 0x ; 2A2:
+0A8C: 0xA06F1C7B ; 2A3: void UpdateMenuCursorItem(void *gui, int n);
+0A90: 0xA06EF2DF ; 2A4: void *GetMenuGUI(void *malloc_adr, void *mfree_adr);
+0A94: 0xA099DC9D ; 2A5: void *GetMultiLinesMenuGUI(void *malloc_adr, void *mfree_adr);
+0A98: 0xA029FC81 ; 2A6: void SetHeaderToMenu(void *gui, const HEADER_DESC *hdr, void *malloc_adr);
+0A9C: 0xA06F2871 ; 2A7: void SetMenuToGUI(void *gui, const void *menu_desc);//MENU_DESC,ML_MENU_DESC
+0AA0: 0xA06EFEAF ; 2A8: int GetMenuItemCount(void *gui);
+0AA4: 0xA06EE1F7 ; 2A9: int CreatePopupGUI(int flag, void *user_pointer, const POPUP_DESC *, int lgp_msg);
+0AA8: 0xA06EE169 ; 2AA: int CreatePopupGUI_ws(int flag, void *user_pointer, const POPUP_DESC *, WSHDR *msg);
+0AAC: 0xA073C5E5 ; 2AB: void *GetPopupUserPointer(void *gui);
+;0AB0: 0x ; 2AC: int DeleteSMS(int index, int n); //return 0x3E8
+;0AB4: 0x ; 2AD: int SetNewSMSToReaded(int index, int _1); //return 0x3E8
+0AB8: 0xA06F32CF ; 2AE: void *GetHeaderPointer(void *gui);
+0ABC: 0xA094C549 ; 2AF: void SetHeaderText(void *hdr_pointer, WSHDR *txt, void *malloc_adr, void *mfree_adr);
 
 #pragma disable old_equal_ff
 +0
