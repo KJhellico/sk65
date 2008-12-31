@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 13.12.2008
+; 31.12.2008
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -756,6 +756,9 @@
 
 ;0B00: 0x ; 2C0: int GetCursorTab(void *tab_gui);
 ;0B04: 0x ; 2C1: void *GetGuiByTab(void *tab_gui, int n);
+0B08: 0xA075FBC5 ; 2C2: int GetSubprovider(WSHDR* ws);
+0B0C: 0xA075FDD9 ; 2C3: int GetRoamingState(void);
+;0B10: 0x ; 2C4: int GetProfileVolumeSetting(int profile, int type);
 
 #pragma disable old_equal_ff
 +0
