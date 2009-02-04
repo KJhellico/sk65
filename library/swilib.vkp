@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 31.12.2008
+; 04.02.2009
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -759,6 +759,20 @@
 0B08: 0xA075FBC5 ; 2C2: int GetSubprovider(WSHDR* ws);
 0B0C: 0xA075FDD9 ; 2C3: int GetRoamingState(void);
 ;0B10: 0x ; 2C4: int GetProfileVolumeSetting(int profile, int type);
+;0B14: 0x ; 2C5: RAM_EMS_ADMIN *RAM_EMS_Admin();
+0B18: 0xA020DCBF ; 2C6: int GetSecondsFromDateTime(int *result, TDate *t_date, TTime *time, TDate *s_date);
+0B1C: 0xA020DD11 ; 2C7: int GetSecondsFromDateTimeSince1997(int *result, TDate *date, TTime *time);
+0B20: 0xA020E103 ; 2C8: int GetSecondsFromTime(TTime *time);
+0B24: 0xA020DBF9 ; 2C9: int GetDateTimeFromSeconds(int *seconds, TDate *t_date, TTime *time, TDate *s_date);
+0B28: 0xA020DD33 ; 2CA: int GetDateTimeFromSecondsSince1997(int *seconds, TDate *date, TTime *time);
+0B2C: 0xA020E115 ; 2CB: void GetTimeFromSeconds(TTime *time, int seconds);
+0B30: 0xA020828F ; 2CC: void InitDate(TDate *date, unsigned long year, unsigned char month, unsigned char day);
+0B34: 0xA02083D3 ; 2CD: void InitTime(TDate *time, unsigned char hour, unsigned char min, unsigned char sec, unsigned long millisec);
+0B38: 0xA0207DB5 ; 2CE: int CmpDates(TDate *date1, TDate *date2);
+0B3C: 0xA020E0A5 ; 2CF: int CmpTimes(TTime *time1, TTime *time2);
+0B40: 0xA0207E05 ; 2D0: int GetDaysFromMonth(TDate *date);
+0B44: 0xA0207DE5 ; 2D1: int IsLeapYear(TDate *date);
+0B48: 0xA04B9143 ; 2D2: void StartNativeBrowserCore(void);
 
 #pragma disable old_equal_ff
 +0
