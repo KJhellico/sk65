@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 04.02.2009
+; 21.02.2009
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -35,8 +35,8 @@
 0064: 0xA0D1D8A8 ; 19: int strcmp (const char *,const char *);
 0068: 0xA0D1D945 ; 1A: char *strcpy (char *dest,const char *source);
 006C: 0xA0D1D9C5 ; 1B: unsigned int strlen(const char *);
-0070: 0xA06E9255 ; 1C: void wsAppendChar(WSHDR *ws,int wchar);
-0074: 0xA06E9209 ; 1D: int wsInsertChar(WSHDR *ws,int wchar,int pos);
+0070: 0xA06E9255 ; 1C: void wsAppendChar(WSHDR *ws,short wchar);
+0074: 0xA06E9209 ; 1D: int wsInsertChar(WSHDR *ws,short wchar,int pos);
 0078: 0xA0739241 ; 1E: IMGHDR *GetPITaddr(int num);
 007C: 0xA02C9E9D ; 1F: DrawMainScreen
 
@@ -178,7 +178,7 @@
 ;
 0280: 0xA06E87CF ; A0: int wsprintf_2(WSHDR *,const char *format,...);
 0284: 0xA06E90E7 ; A1: WSHDR *wstrcpy_2(WSHDR *wshdr_d,WSHDR *wshdr_s);
-0288: 0xA06E8D53 ; A2: ws_GetChar
+0288: 0xA06E8D53 ; A2: unsigned short ws_GetChar(WSHDR *ws,int n);
 028C: 0xA0944EC0 ; A3: void ws_2str(WSHDR *ws, char *str, unsigned int size);
 0290: 0xA06E8FC7 ; A4: WSHDR *AllocWS_2(int len);
 0294: 0xA06E8911 ; A5: void FreeWS_2(WSHDR *wshdr);
@@ -198,7 +198,7 @@
 02C8: 0xA0FC3E29 ; B2: GetBuildCanvas
 02CC: 0xA0FCF301 ; B3: Seconds2iTime
 02D0: 0xA0717D53 ; B4: void GetDateTime(TDate *, TTime *);
-02D4: 0xA0207F13 ; B5: char GetWeek(TDate*);
+02D4: 0xA0207F13 ; B5: char GetWeek(TDate *);
 02D8: 0xA02BD169 ; B6: char GetProfile(void);
 02DC: 0xA02BD037 ; B7: char SetProfile(char);
 02E0: 0xA0D1D644 ; B8: int sdiv(int denom,int number);
@@ -572,7 +572,7 @@
 0848: 0xA03ACDE8 ; 212: int CardExplGetCurItem(void *csm);
 084C: 0xA0339528 ; 213: void CardExplGetFName(void *csm, int cur_item, WSHDR *dest);
 0850: 0xA06E91E9 ; 214: void wstrcpybypos(WSHDR *dest,WSHDR *src,int from,int len);
-0854: 0xA06E9279 ; 215: void wsRemoveChars(WSHDR *ws,int from,int to)
+0854: 0xA06E9279 ; 215: void wsRemoveChars(WSHDR *ws,int from,int to);
 0858: 0xA06E882D ; 216: void wstrcarprintf(WSHDR *,const char *format,...);
 085C: 0xA0536721 ; 217: int CreateMultiLinesMenu(int dummy,int dummy2,const ML_MENU_DESC *,const HEADER_DESC *,int to_item,int n);
 0860: 0xA099DE23 ; 218: void SetMLMenuItemText(void *data,void *item,WSHDR *ws1,WSHDR *ws2,int n);
@@ -742,9 +742,9 @@
 0AC8: 0xA0A02205 ; 2B2: int GetSmsPosIndex(SMS_POS_INDEX_DATA *buf, int data_id);
 0ACC: 0xA049AC9D ; 2B3: NativeAbData *AllocNativeAbData(void);
 0AD0: 0xA049AD23 ; 2B4: int FreeNativeAbData(NativeAbData *ab_data);
-0AD4: 0xA049AE87 ; 2B5: int GetNativeAbDataType(NativeAbData *nab, int unk0); //unk0=0
-0AD8: 0xA049B223 ; 2B6: WSHDR *GetNumFromNativeAbData(NativeAbData *nab, int type, int unk0); //unk0=0
-0ADC: 0xA049AE9B ; 2B7: int GetNativeAbDataStatus(NativeAbData *nab, int _0); //9,not filled, 1, filled
+0AD4: 0xA049AE87 ; 2B5: int GetNativeAbDataType(NativeAbData *nab, int n);
+0AD8: 0xA049B223 ; 2B6: WSHDR *GetNumFromNativeAbData(NativeAbData *nab, int type, int n);
+0ADC: 0xA049AE9B ; 2B7: int GetNativeAbDataStatus(NativeAbData *nab, int n); //9,not filled, 1, filled
 0AE0: 0xA049B303 ; 2B8: int SetNumToNativeAbData(NativeAbData *abd, int unk, WSHDR *num); //unk=0x1D, maxlen ?, type ?
 0AE4: 0xA049A1A9 ; 2B9: unsigned int OpenNativeAddressbook(int type, int unk1, int unk2, void *data); //type, 0x4, select num
 ;0AE8: 0x ; 2BA: void SetHeaderIcon(void *hdr_pointer, const int *icon, void *malloc_adr, void *mfree_adr);
@@ -773,6 +773,10 @@
 0B40: 0xA0207E05 ; 2D0: int GetDaysFromMonth(TDate *date);
 0B44: 0xA0207DE5 ; 2D1: int IsLeapYear(TDate *date);
 0B48: 0xA04B9143 ; 2D2: void StartNativeBrowserCore(void);
+0B4C: 0xA049B3DB ; 2D3: int GetFilledNAbDataCount(NativeAbData *nab);
+0B50: 0xA049AEB1 ; 2D4: void *GetDataFromNAbData(NativeAbData *nab, int n);
+0B54: 0xA0768DC5 ; 2D5: void UnpackNumPkt(PKT_NUM *pkt, char *buf, int maxlen);
+
 
 #pragma disable old_equal_ff
 +0
