@@ -12,10 +12,10 @@ a	EQU	b
   PUBLIC HeaderIcon
   PUBLIC IconIDList
 
-Msg_dispatch_ret               DCD 0xA0AB1CF6+1
-csa1_ret                       DCD 0xA0A87DF0+1
-csa2_ret                       DCD 0xA0A881A2+1
-SetHTTPProfile_ret             DCD 0xA0881E18  
+  defadr Msg_dispatch_ret,     0xA0AB1CF6+1
+  defadr csa1_ret,             0xA0A87DF0+1
+  defadr csa2_ret,             0xA0A881A2+1
+  defadr SetHTTPProfile_ret,   0xA0881E18
 
 PIC_SIM_insert                 EQU 0x33B
 PIC_r_sel                      EQU 0x36F
@@ -45,7 +45,7 @@ IconIDList                     DCD PIC_r_sel, PIC_r_unsel
   defadr SetMenuItemIcon,      0xA07C77A1
   defadr GetCurMenuItem,       0xA07C62DF
 
-  defadr SIM_Data,             0xA8780100
+  defadr SIM_Data,             0xA8000380
 
   defadr Set_HTTP_Profile,     0xA0881E00
   defadr Set_SMS_Profile,      0xA083BF15
@@ -55,5 +55,6 @@ IconIDList                     DCD PIC_r_sel, PIC_r_unsel
 
   defadr OpenReadCloseFile,    0xA08F90CF
   defadr mfree,                0xA0203C8C
+  defadr IsGPRSConnected,      0xA0AECB35
 
   END
