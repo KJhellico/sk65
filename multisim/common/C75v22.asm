@@ -12,10 +12,10 @@ a       EQU     b
   PUBLIC HeaderIcon
   PUBLIC IconIDList
 
-Msg_dispatch_ret               DCD 0xA0A30EF6+1
-csa1_ret                       DCD 0xA0A17B58+1
-csa2_ret                       DCD 0xA0A17F0A+1
-SetHTTPProfile_ret             DCD 0xA082AF88
+  defadr Msg_dispatch_ret,     0xA0A30EF6+1
+  defadr csa1_ret,             0xA0A17B58+1
+  defadr csa2_ret,             0xA0A17F0A+1
+  defadr SetHTTPProfile_ret,   0xA082AF88
 
 PIC_SIM_insert                 EQU 0x34C
 PIC_r_sel                      EQU 0x380

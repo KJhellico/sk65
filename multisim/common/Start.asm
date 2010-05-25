@@ -25,7 +25,7 @@ MsgDispatchRpl:
 	lsls    r2, r1, #24
 	lsrs	r2, r2, #24
 	ldr	r4, =Msg_dispatch_ret
-	ldr	r4, [r4]
+;	ldr	r4, [r4]
 	bx	r4
 
   RSEG CODE:CODE:NOROOT(4)
@@ -37,7 +37,7 @@ Cmd_Hook1:
 	ldr     r4, =SIM_Cmd_Hook
 	blx     r4
 	ldr	r6, =csa1_ret
-	ldr	r6, [r6]
+;	ldr	r6, [r6]
 	bx	r6
 
   RSEG CODE:CODE:NOROOT(4)
@@ -48,7 +48,7 @@ Cmd_Hook2:
 	ldr     r4, =SIM_Cmd_Hook
 	blx     r4
 	ldr	r6, =csa2_ret
-	ldr	r6, [r6]
+;	ldr	r6, [r6]
 	bx	r6
 
   ARM
@@ -66,7 +66,7 @@ SetHTTPProfilel:
 	blx	r4
 	ldmfd   sp!, {r0-r7}
 	ldr	r3, =SetHTTPProfile_ret
-	ldr	r3, [r3]
+;	ldr	r3, [r3]
 	bx	r3
                                 
   THUMB
