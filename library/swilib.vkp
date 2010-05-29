@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 01.03.2009
+; 29.05.2010
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -770,6 +770,7 @@
 0B34: 0xA02083D3 ; 2CD: void InitTime(TDate *time, unsigned char hour, unsigned char min, unsigned char sec, unsigned long millisec);
 0B38: 0xA0207DB5 ; 2CE: int CmpDates(TDate *date1, TDate *date2);
 0B3C: 0xA020E0A5 ; 2CF: int CmpTimes(TTime *time1, TTime *time2);
+
 0B40: 0xA0207E05 ; 2D0: int GetDaysFromMonth(TDate *date);
 0B44: 0xA0207DE5 ; 2D1: int IsLeapYear(TDate *date);
 0B48: 0xA04B9143 ; 2D2: void StartNativeBrowserCore(void);
@@ -781,6 +782,14 @@
 0B60: 0xA094BA33 ; 2D8: void TViewSetText(void *gui, WSHDR *text, void *malloc_adr, void *mfree_adr);
 0B64: 0xA094BAD1 ; 2D9: void TViewSetUserPointer(void *gui,void *user_pointer);
 0B68: 0xA094BAD5 ; 2DA: void *TViewGetUserPointer(void *gui);
+0B6C: 0xA03AFC00 ; 2DB: void SendMedia(WSHDR *file, WSHDR *path);
+0B70: 0x ; 2DC: void SaveMaxIllumination(int level);
+0B74: 0x ; 2DD: void SetIlluminationoffTimeout(int time_sec);
+0B78: 0x ; 2DE: void IllumTimeRequest(int TimeMode, int Counter);
+0B7C: 0x ; 2DF: void IllumTimeRelease(int TimeMode, int Counter);
+
+0B80: 0x ; 2E0: IMGHDR *GetIMGHDRFromThemeCache(int index);
+0B84: 0x ; 2E1: int GetExtUidByFileName_ws(WSHDR * fn);
 
 
 #pragma disable old_equal_ff
