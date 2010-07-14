@@ -377,7 +377,7 @@
 056C: 0xA0C9AD9F ; 15B: png_voidp png_malloc(png_structp png_ptr, png_uint_32 size);
 0570: 0xA0C9BA07 ; 15C: void png_read_image(png_structp png_ptr, png_bytepp image);
 0574: 0xA0C9BA49 ; 15D: void png_read_end(png_structp png_ptr, png_infop info_ptr);
-0578: 0xA0C9A69D ; 15E: png_voidp png_voidp png_get_io_ptr(png_structp png_ptr);
+0578: 0xA0C9A69D ; 15E: png_voidp png_get_io_ptr(png_structp png_ptr);
 057C: 0xA0C9A913 ; 15F: png_uint_32 png_get_rowbytes(png_structp png_ptr,png_infop info_ptr);
 
 0580: 0xA0C9B59F ; 160: void png_read_row(png_structp png_ptr,png_bytep row,png_bytep dsp_row);
@@ -690,8 +690,8 @@
 ;0A04: 0x ; 281: char *RamIsRunJava(void);
 ;0A08: 0x ; 282: char *RamIsRunCamera(void);
 0A0C: 0xA02E9FA4 ; 283: int runMidletLinkablely(const char *midlet_name, WSHDR *filename);
-;0A10: 0x ; 284: int IsGPRS(void);
-;0A14: 0x ; 285: int IsEDGE(void);
+0A10: 0xA09FFD3D ; 284: int IsGPRS(void);
+0A14: 0xA09FFD45 ; 285: int IsEDGE(void);
 ;0A18: 0x ; 286: int GetSMSState(void);
 ;0A1C: 0x ; 287: int BT_GetLocVisibility(void);
 ;0A20: 0x ; 288: int GetCurrAudioPath(void);
@@ -790,6 +790,16 @@
 
 0B80: 0x ; 2E0: IMGHDR *GetIMGHDRFromThemeCache(int index);
 0B84: 0x ; 2E1: int GetExtUidByFileName_ws(WSHDR * fn);
+0B88: 0x ; 2E2: int wstrcmp(WSHDR*ws1,WSHDR*ws2);
+0B8C: 0x ; 2E3: int fexists(WSHDR* FileName);
+0B90: 0x ; 2E4: int SettingsAE_Update_ws(WSHDR *,int set,char * entry,char *keyword);
+0B94: 0x ; 2E5: int SettingsAE_Read_ws(WSHDR *,int set,char * entry,char *keyword);
+0B98: 0x ; 2E6: int SettingsAE_SetFlag(int val,int set,char * entry,char *keyword);
+0B9Ñ: 0x ; 2E7: SettingsAE_GetFlag(int *res,int set,char * entry,char *keyword);
+0BA0: 0x ; 2E8: SettingsAE_Update(int val,int set,char * entry,char *keyword);
+0BA4: 0x ; 2E9: SettingsAE_Read(int *res,int set,char * entry,char *keyword);
+0BA8: 0x ; 2EA: void* SettingsAE_GetEntryList(int set);
+0BAC: 0x ; 2EB: SettingsAE_RemoveEntry(int set,char *entry,int flag);
 
 
 #pragma disable old_equal_ff
