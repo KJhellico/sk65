@@ -64,7 +64,7 @@
 00D0: 0xA02B2BAC ; 34: void PlaySoundLoop(int _0x2F, int param2, int duration);
 00D4: 0xA04F3E6F ; 35: void AlarmClockRing(void);
 ;00D8: 0x ; 36: void SLI_SetState(unsigned char state);
-;00DC: 0x ; 37: void Ringtones_SetState(unsigned char state);
+00DC: 0xA02F14D0 ; 37: void Ringtones_SetState(unsigned char state);
 ;00E0: 0x ; 38: int Registry_GetHMIKeyID(char *Keyword);
 ;00E4: 0x ; 39: Registry_SetResourcePath(int HMIKeyID, int Prio, WSHDR *Path);
 ;00E8: 0x ; 3A: Registry_DeleteResourcePath(int HMIKeyID, int Prio);
