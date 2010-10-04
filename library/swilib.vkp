@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 29.05.2010
+; 19.09.2010
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -783,24 +783,25 @@
 0B64: 0xA094BAD1 ; 2D9: void TViewSetUserPointer(void *gui,void *user_pointer);
 0B68: 0xA094BAD5 ; 2DA: void *TViewGetUserPointer(void *gui);
 0B6C: 0xA03AFC00 ; 2DB: void SendMedia(WSHDR *file, WSHDR *path);
-0B70: 0x ; 2DC: void SaveMaxIllumination(int level);
-0B74: 0x ; 2DD: void SetIlluminationoffTimeout(int time_sec);
-0B78: 0x ; 2DE: void IllumTimeRequest(int TimeMode, int Counter);
-0B7C: 0x ; 2DF: void IllumTimeRelease(int TimeMode, int Counter);
+;0B70: 0x ; 2DC: void SaveMaxIllumination(int level);
+;0B74: 0x ; 2DD: void SetIlluminationoffTimeout(int time_sec);
+;0B78: 0x ; 2DE: void IllumTimeRequest(int TimeMode, int Counter);
+;0B7C: 0x ; 2DF: void IllumTimeRelease(int TimeMode, int Counter);
 
-0B80: 0x ; 2E0: IMGHDR *GetIMGHDRFromThemeCache(int index);
-0B84: 0x ; 2E1: int GetExtUidByFileName_ws(WSHDR * fn);
-0B88: 0x ; 2E2: int wstrcmp(WSHDR*ws1,WSHDR*ws2);
-0B8C: 0x ; 2E3: int fexists(WSHDR* FileName);
-0B90: 0x ; 2E4: int SettingsAE_Update_ws(WSHDR *,int set,char * entry,char *keyword);
-0B94: 0x ; 2E5: int SettingsAE_Read_ws(WSHDR *,int set,char * entry,char *keyword);
-0B98: 0x ; 2E6: int SettingsAE_SetFlag(int val,int set,char * entry,char *keyword);
-0B9Ñ: 0x ; 2E7: SettingsAE_GetFlag(int *res,int set,char * entry,char *keyword);
-0BA0: 0x ; 2E8: SettingsAE_Update(int val,int set,char * entry,char *keyword);
-0BA4: 0x ; 2E9: SettingsAE_Read(int *res,int set,char * entry,char *keyword);
-0BA8: 0x ; 2EA: void* SettingsAE_GetEntryList(int set);
-0BAC: 0x ; 2EB: SettingsAE_RemoveEntry(int set,char *entry,int flag);
-
+;0B80: 0x ; 2E0: IMGHDR *GetIMGHDRFromThemeCache(int index);
+0B84: 0xA02A03F5 ; 2E1: int GetExtUidByFileName_ws(WSHDR * fn);
+0B88: 0xA06E8A57 ; 2E2: int wstrcmp(WSHDR*ws1,WSHDR*ws2);
+;0B8C: 0x ; 2E3: int fexists(WSHDR* FileName);
+;0B90: 0x ; 2E4: int SettingsAE_Update_ws(WSHDR *,int set,char * entry,char *keyword);
+;0B94: 0x ; 2E5: int SettingsAE_Read_ws(WSHDR *,int set,char * entry,char *keyword);
+;0B98: 0x ; 2E6: int SettingsAE_SetFlag(int val,int set,char * entry,char *keyword);
+;0B9Ñ: 0x ; 2E7: SettingsAE_GetFlag(int *res,int set,char * entry,char *keyword);
+;0BA0: 0x ; 2E8: SettingsAE_Update(int val,int set,char * entry,char *keyword);
+;0BA4: 0x ; 2E9: SettingsAE_Read(int *res,int set,char * entry,char *keyword);
+;0BA8: 0x ; 2EA: void* SettingsAE_GetEntryList(int set);
+;0BAC: 0x ; 2EB: SettingsAE_RemoveEntry(int set,char *entry,int flag);
+0BB0: 0xA097BCF0 ; 2EC: int i2c_transfer(I2C_MSG *msg);
+0BB4: 0xA097BD3C ; 2ED: int i2c_receive(I2C_MSG *msg);
 
 #pragma disable old_equal_ff
 +0
