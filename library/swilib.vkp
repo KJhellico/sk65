@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 19.09.2010
+; 13.10.2010
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -720,7 +720,7 @@
 ;0A78: 0x ; 29E:
 ;0A7C: 0x ; 29F:
 
-;0A80: 0x ; 2A0: int GetAlarmclockState(int state);
+0A80: 0xA04A1BA1 ; 2A0: int GetAlarmclockState(int state);
 ;0A84: 0x ; 2A1:
 ;0A88: 0x ; 2A2:
 0A8C: 0xA06F1C7B ; 2A3: void UpdateMenuCursorItem(void *gui, int n);
@@ -802,6 +802,8 @@
 ;0BAC: 0x ; 2EB: SettingsAE_RemoveEntry(int set,char *entry,int flag);
 0BB0: 0xA097BCF0 ; 2EC: int i2c_transfer(I2C_MSG *msg);
 0BB4: 0xA097BD3C ; 2ED: int i2c_receive(I2C_MSG *msg);
+0BB8: 0xA0206D94 ; 2EE: unsigned int GetMemUsedByCepID(short cepid);
+0BBC: 0xA02037D4 ; 2EF: unsigned int GetFreePermMemory(void);
 
 #pragma disable old_equal_ff
 +0
