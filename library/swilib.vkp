@@ -2,7 +2,7 @@
 ; * Function Library *
 ; SK65v50
 
-; 13.10.2010
+; 09.01.2011
 
 +0FD4000
 #pragma enable old_equal_ff
@@ -804,6 +804,10 @@
 0BB4: 0xA097BD3C ; 2ED: int i2c_receive(I2C_MSG *msg);
 0BB8: 0xA0206D94 ; 2EE: unsigned int GetMemUsedByCepID(short cepid);
 0BBC: 0xA02037D4 ; 2EF: unsigned int GetFreePermMemory(void);
+
+0BC0: 0xA07C6649 ; 2F0: int PushDRWOBJOnLAYER(DRWOBJ*, LCDLAYER *);
+0BC4: 0xA031CA3F ; 2F1: int LCDRedrawLAYER(LCDLAYER *);
+0BC8: 0xA0206888 ; 2F2: GBSPROC *GetGBSProcAddress(short cepid);
 
 #pragma disable old_equal_ff
 +0
